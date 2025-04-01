@@ -12,19 +12,42 @@
 
   <body>
     <section>
-      <div class="container">
+      <div class="container" style="position: relative">
         <video
+          id="video"
           src="assets/charlie.mp4"
           autoplay
           loop
           muted
           playsinline
           preload="auto"
-          width="400"
-          height="400"
+          width="500"
+          height="500"
         ></video>
         <h1>April Fool😂</h1>
+        <img
+          id="unmuteButton"
+          src="assets/unmute.png"
+          alt="Unmute"
+          style="
+            position: absolute;
+            bottom: 2%;
+            right: 13%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+          "
+        />
       </div>
     </section>
+    <script>
+      const video = document.getElementById("video");
+      const unmuteButton = document.getElementById("unmuteButton");
+
+      unmuteButton.addEventListener("click", () => {
+        video.muted = false;
+        unmuteButton.style.display = "none"; // Hide the icon
+      });
+    </script>
   </body>
 </html>
